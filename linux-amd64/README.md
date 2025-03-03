@@ -2,6 +2,8 @@
 
 [简体中文](#简体中文) | [English](#english) | [日本語](#japanese) | [한국어](#korean) | [繁體中文](#traditional-chinese) | [Français](#français)
 
+GitHub: [https://github.com/liliangshan/mgit](https://github.com/liliangshan/mgit)
+
 ## 简体中文
 
 MGit 是一个用于管理多个 Git 项目的命令行工具。它可以帮助您有效地管理、同步和更新多个 Git 仓库。
