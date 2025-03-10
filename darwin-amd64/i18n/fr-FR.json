@@ -8,6 +8,7 @@
     "cmd.delete": "Supprimer le projet de la base de données",
     "cmd.set": "Modifier les paramètres (mgit set)",
     "cmd.help": "Afficher ce message d'aide",
+    "cmd.version": "Afficher les informations de version",
     "prompt.project_name": "Entrez le nom du projet: ",
     "prompt.repo_url": "Entrez l'URL du dépôt (exemple: https://github.com/user/repo.git): ",
     "prompt.commit_message": "Entrez le message de commit (vide pour utiliser le nom de la machine): ",
@@ -161,7 +162,7 @@
     "error.branch_delete_failed": "Échec de la suppression de la branche",
     "error.branch_create_failed": "Échec de la création de la branche",
     "error.branch_merge_failed": "Échec de la fusion de la branche",
-    "cmd.branch": "Gestion des branches",
+    "cmd.branch": "Définir les branches du projet",
     "cmd.branch_list": "Lister toutes les branches",
     "cmd.branch_create": "Créer une nouvelle branche",
     "cmd.branch_delete": "Supprimer une branche",
@@ -234,5 +235,14 @@
     "error.project_init_failed": "Échec de l'initialisation du projet %s : %v",
     "msg.pull_project_failed": "Échec de la récupération du projet '%s' : %v\n",
     "msg.pull_failed": "Échec de la récupération : %v",
-    "msg.read_dir": "Échec de la lecture du répertoire : %v"
+    "msg.read_dir": "Échec de la lecture du répertoire : %v",
+    "msg.db_pushed": "Base de données poussée",
+    "msg.version": "mgit version %s",
+    "msg.version_aliases": "Alias disponibles : v, -v, --version",
+    "msg.no_args_interactive": "Entrer en mode interactif sans arguments",
+    "prompt.select_remote_branch": "Sélectionner une branche distante",
+    "prompt.local_branch_name": "Entrer le nom de la branche locale",
+    "msg.branch_updated_success": "Branches du projet %s mises à jour : branche locale %s, branche distante %s",
+    "error.update_project_branches": "Échec de la mise à jour des branches du projet : %v",
+    "prompt.select_push_branch": "Veuillez sélectionner la branche de destination pour le push"
 } 

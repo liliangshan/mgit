@@ -273,6 +273,37 @@ MGIT_HOME=/path/to/mgit
 - 同步本地和远程分支配置
 - 在多项目间统一分支管理
 
+### 设置拉取分支
+
+```bash
+# 交互式设置项目拉取分支
+./mgit set pull-branch
+
+# 为特定项目直接设置拉取分支
+./mgit set pull-branch project_name branch_name
+```
+
+拉取分支设置的好处：
+- 精确控制每个项目的拉取分支
+- 简化多分支项目的代码同步
+- 避免意外拉取错误的分支
+
+### 帮助命令
+
+```bash
+# 显示完整帮助信息
+./mgit help
+# 或使用以下别名
+./mgit h
+./mgit -h
+./mgit -help
+```
+
+帮助命令提供：
+- 所有可用命令列表
+- 每个命令的使用示例
+- 详细的操作指南和最佳实践
+
 ## English
 
 MGit is a command-line tool for managing multiple Git projects. It helps you efficiently manage, synchronize, and update multiple Git repositories.
@@ -539,6 +570,37 @@ Branch setting helps you:
 - Quickly switch and manage project branches
 - Synchronize local and remote branch configurations
 - Unify branch management across multiple projects
+
+### Setting Pull Branch
+
+```bash
+# Interactively set project pull branch
+./mgit set pull-branch
+
+# Directly set pull branch for a specific project
+./mgit set pull-branch project_name branch_name
+```
+
+Benefits of Pull Branch Setting:
+- Precisely control pull branch for each project
+- Simplify code synchronization for multi-branch projects
+- Avoid accidentally pulling from the wrong branch
+
+### Help Command
+
+```bash
+# Display full help information
+./mgit help
+# Or use these aliases
+./mgit h
+./mgit -h
+./mgit -help
+```
+
+Help command provides:
+- List of all available commands
+- Usage examples for each command
+- Detailed operation guide and best practices
 
 ## 繁體中文
 
@@ -807,6 +869,37 @@ MGIT_HOME=/path/to/mgit
 - 同步本地和遠端分支配置
 - 在多專案間統一分支管理
 
+### 設定拉取分支
+
+```bash
+# 互動式設定專案拉取分支
+./mgit set pull-branch
+
+# 為特定專案直接設定拉取分支
+./mgit set pull-branch project_name branch_name
+```
+
+拉取分支設定的好處：
+- 精確控制每個專案的拉取分支
+- 簡化多分支專案的程式碼同步
+- 避免意外拉取錯誤的分支
+
+### 說明命令
+
+```bash
+# 顯示完整說明資訊
+./mgit help
+# 或使用以下別名
+./mgit h
+./mgit -h
+./mgit -help
+```
+
+說明命令提供：
+- 所有可用命令列表
+- 每個命令的使用範例
+- 詳細的操作指南和最佳實踐
+
 ## Japanese
 
 MGit は複数の Git プロジェクトを管理するためのコマンドラインツールです。複数の Git リポジトリを効率的に管理、同期、更新することができます。
@@ -859,7 +952,7 @@ MGit はリモート Git リポジトリを通じてデータベースを同期�
 
 ### システム環境変数の設定
 
-MGit をシステム PATH に追加してグローバルアクセスを実現：
+MGitをシステム PATHに追加してグローバルアクセスを実現：
 
 1. Windows:
 ```powershell
@@ -888,7 +981,7 @@ mgit --version
 現在のバージョン：1.0.5
 プロジェクトホームページ：https://github.com/liliangshan/mgit
 
-### なぜ MGit を選ぶのか？
+### MGitを選ぶのか？
 
 1. 効率的なコラボレーション
 - 複数デバイス間の設定自動同期
@@ -1065,7 +1158,7 @@ MGIT_HOME=/path/to/mgit
 
 直接設定の例：
 ```bash
-# project1 のローカルブランチを develop に、リモートブランチを origin/main に設定
+# project1のローカルブランチを develop に、リモートブランチを origin/main に設定
 ./mgit branch project1 develop origin/main
 ```
 
@@ -1073,6 +1166,38 @@ MGIT_HOME=/path/to/mgit
 - プロジェクトブランチの迅速な切り替えと管理
 - ローカルとリモートのブランチ設定の同期
 - 複数プロジェクト間でのブランチ管理の統一
+
+### プル元ブランチの設定
+
+```bash
+# 対話形式でプロジェクトのプル元ブランチを設定
+./mgit set pull-branch
+
+# 特定のプロジェクトのプル元ブランチを直接設定
+./mgit set pull-branch project_name branch_name
+```
+
+プル元ブランチ設定のメリット：
+- 各プロジェクトのプル元ブランチを正確に制御
+- マルチブランチプロジェクトのコード同期を簡素化
+- 誤ったブランチからのプルを防止
+
+### ヘルプコマンド
+
+```bash
+# 完全なヘルプ情報を表示
+./mgit help
+# または以下のエイリアスを使用
+./mgit h
+./mgit -h
+./mgit -help
+```
+
+ヘルプコマンドが提供する情報：
+- 利用可能なすべてのコマンドのリスト
+- 各コマンドの使用例
+- 詳細な操作ガイドとベストプラクティス
+
 
 ## Korean
 
@@ -1102,9 +1227,9 @@ MGit은 여러 Git 프로젝트를 관리하기 위한 명령줄 도구입니다
 - 단일 풀 시 원격에 여러 브랜치가 있는 경우 풀할 브랜치 선택 가능
 - 로컬 브랜치와 원격 브랜치 전환 기능 추가
 
-### 원격 데이터베이스 동기화
+### 리모트 데이터베이스 동기화
 
-MGit은 원격 Git 저장소를 통해 데이터베이스를 동기화하여 여러 장치 간 설정 공유를 실현합니다:
+MGit은 원격 Git 저장소를 통해 데이터베이스를 동기화하여 여러 장치 간 설정을 공유합니다:
 
 1. 데이터베이스 동기화 활성화:
 ```bash
@@ -1287,7 +1412,7 @@ MGIT_HOME=/path/to/mgit
 대화형 메뉴 예:
 ```
 프로젝트 선택:
-  ▸ == 모든 프로젝트 == (모든 프로젝트 동기화/푸시)
+  ▸ == 모든 프로젝트 == (모든 프로젝트를 동기화/푸시)
     project1 (https://github.com/user/project1.git) [마지막 커밋: machine-02 @ 2024-01-02 13:00:00]
     project2 (https://github.com/user/project2.git)
 ```
@@ -1340,6 +1465,38 @@ MGIT_HOME=/path/to/mgit
 - 프로젝트 브랜치의 빠른 전환 및 관리
 - 로컬 및 원격 브랜치 구성 동기화
 - 여러 프로젝트 간 브랜치 관리 통합
+
+### 풀 브랜치 설정
+
+```bash
+# 대화형으로 프로젝트의 풀 브랜치 설정
+./mgit set pull-branch
+
+# 특정 프로젝트의 풀 브랜치를 직접 설정
+./mgit set pull-branch 프로젝트_이름 브랜치_이름
+```
+
+풀 브랜치 설정의 이점:
+- 각 프로젝트의 풀 브랜치를 정확하게 제어
+- 다중 브랜치 프로젝트의 코드 동기화 간소화
+- 잘못된 브랜치에서 풀하는 것을 방지
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Français
 
@@ -1540,4 +1697,19 @@ La configuration des branches vous aide à :
 - Basculer et gérer rapidement les branches du projet
 - Synchroniser les configurations de branches locales et distantes
 - Unifier la gestion des branches entre plusieurs projets
+
+### Configuration de la branche de pull
+
+```bash
+# Configuration interactive de la branche de pull du projet
+./mgit set pull-branch
+
+# Définir directement la branche de pull pour un projet spécifique
+./mgit set pull-branch nom_projet nom_branche
+```
+
+Avantages de la configuration de la branche de pull :
+- Contrôle précis de la branche de pull pour chaque projet
+- Simplification de la synchronisation du code pour les projets multi-branches
+- Éviter de pull accidentellement à partir de la mauvaise branche
 

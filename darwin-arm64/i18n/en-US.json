@@ -9,6 +9,7 @@
     "cmd.set": "Change Settings (mgit set)",
     "cmd.help": "Show this help message",
     "cmd.update": "Update mgit to the latest version",
+    "cmd.version": "Show version information",
     "prompt.project_name": "Enter project name: ",
     "prompt.repo_url": "Enter repository URL (e.g., https://github.com/user/repo.git): ",
     "prompt.commit_message": "Enter commit message (empty to use machine name): ",
@@ -162,7 +163,7 @@
     "error.branch_delete_failed": "Failed to delete branch",
     "error.branch_create_failed": "Failed to create branch",
     "error.branch_merge_failed": "Failed to merge branch",
-    "cmd.branch": "Branch management",
+    "cmd.branch": "Set project branches",
     "cmd.branch_list": "List all branches",
     "cmd.branch_create": "Create new branch",
     "cmd.branch_delete": "Delete branch",
@@ -234,5 +235,14 @@
     "msg.db_file_copy_exists_overwrite": "Overwrite existing database file",
     "msg.read_dir": "Failed to read directory: %v",
     "msg.pull_project_failed": "Failed to pull project '%s': %v\n",
-    "msg.pull_failed": "Pull failed: %v"
+    "msg.pull_failed": "Pull failed: %v",
+    "msg.db_pushed": "Database pushed",
+    "msg.version": "mgit version %s",
+    "msg.version_aliases": "Available aliases: v, -v, --version",
+    "msg.no_args_interactive": "Enter interactive setup when no arguments are provided",
+    "prompt.select_remote_branch": "Select remote branch",
+    "prompt.local_branch_name": "Enter local branch name",
+    "msg.branch_updated_success": "Project %s branches updated: local branch %s, remote branch %s",
+    "error.update_project_branches": "Failed to update project branches: %v",
+    "prompt.select_push_branch": "Please select the push target branch"
 } 

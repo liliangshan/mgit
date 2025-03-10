@@ -9,6 +9,7 @@
     "cmd.set": "설정 변경 (mgit set)",
     "cmd.help": "이 도움말 메시지 표시",
     "cmd.update": "mgit을 최신 버전으로 업데이트",
+    "cmd.version": "버전 정보 표시",
     "prompt.project_name": "프로젝트 이름 입력: ",
     "prompt.repo_url": "저장소 URL 입력 (예: https://github.com/user/repo.git): ",
     "prompt.commit_message": "커밋 메시지 입력 (비워두면 기계 이름 사용): ",
@@ -73,7 +74,7 @@
     "error.branch_delete_failed": "브랜치 삭제 실패",
     "error.branch_create_failed": "브랜치 생성 실패",
     "error.branch_merge_failed": "브랜치 병합 실패",
-    "cmd.branch": "브랜치 관리",
+    "cmd.branch": "프로젝트 브랜치 설정",
     "cmd.branch_list": "모든 브랜치 목록",
     "cmd.branch_create": "새 브랜치 생성",
     "cmd.branch_delete": "브랜치 삭제",
@@ -234,5 +235,14 @@
     "msg.db_file_copy_exists_overwrite": "기존 데이터베이스 파일을 덮어씁니다",
     "msg.db_repo_exists_skip": "기존 데이터베이스 저장소를 건너뜁니다",
     "msg.env_not_exit": "환경 설정 파일이 존재하지 않습니다. 새로운 설정 파일을 생성합니다",
-    "msg.db_repo_exists_overwrite": "기존 데이터베이스 저장소를 사용합니다"
+    "msg.db_repo_exists_overwrite": "기존 데이터베이스 저장소를 사용합니다",
+    "msg.db_pushed": "데이터베이스 푸시 완료",
+    "msg.version": "mgit 버전 %s",
+    "msg.version_aliases": "사용 가능한 별칭: v, -v, --version",
+    "msg.no_args_interactive": "인수 없이 대화형 모드로 진입",
+    "prompt.select_remote_branch": "원격 브랜치 선택",
+    "prompt.local_branch_name": "로컬 브랜치 이름 입력",
+    "msg.branch_updated_success": "프로젝트 %s 브랜치 업데이트: 로컬 브랜치 %s, 원격 브랜치 %s",
+    "error.update_project_branches": "프로젝트 브랜치 업데이트 실패: %v",
+    "prompt.select_push_branch": "푸시할 대상 브랜치를 선택하세요"
 } 

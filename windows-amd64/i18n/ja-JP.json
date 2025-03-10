@@ -134,7 +134,7 @@
     "error.branch_delete_failed": "ブランチの削除に失敗しました",
     "error.branch_create_failed": "ブランチの作成に失敗しました",
     "error.branch_merge_failed": "ブランチのマージに失敗しました",
-    "cmd.branch": "ブランチ管理",
+    "cmd.branch": "ブランチ設定",
     "cmd.branch_list": "全ブランチの一覧",
     "cmd.branch_create": "新しいブランチの作成",
     "cmd.branch_delete": "ブランチの削除",
@@ -234,5 +234,15 @@
     "msg.db_repo_exists_overwrite": "既存のデータベースリポジトリを使用します",
     "msg.db_repo_exists_skip": "既存のデータベースリポジトリをスキップします",
     "msg.env_not_exit": "環境設定ファイルが存在しません。新しい設定ファイルを作成します",
-    "msg.db_file_copy_exists_overwrite": "既存のデータベースファイルを上書きします"
+    "msg.db_file_copy_exists_overwrite": "既存のデータベースファイルを上書きします",
+    "msg.db_pushed": "データベースをプッシュしました",
+    "cmd.version": "バージョン情報を表示",
+    "msg.version": "mgit バージョン %s",
+    "msg.version_aliases": "使用可能なエイリアス: v, -v, --version",
+    "msg.no_args_interactive": "引数なしで対話モードに入ります",
+    "prompt.select_remote_branch": "リモートブランチを選択",
+    "prompt.local_branch_name": "ローカルブランチ名を入力",
+    "msg.branch_updated_success": "プロジェクト %s のブランチが更新されました：ローカルブランチ %s、リモートブランチ %s",
+    "error.update_project_branches": "プロジェクトのブランチ更新に失敗しました：%v",
+    "prompt.select_push_branch": "プッシュ先のブランチを選択してください"
 } 

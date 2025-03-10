@@ -168,7 +168,7 @@
     "error.branch_delete_failed": "刪除分支失敗",
     "error.branch_create_failed": "建立分支失敗",
     "error.branch_merge_failed": "合併分支失敗",
-    "cmd.branch": "分支管理",
+    "cmd.branch": "設定專案分支",
     "cmd.branch_list": "列出所有分支",
     "cmd.branch_create": "建立新分支",
     "cmd.branch_delete": "刪除分支",
@@ -234,5 +234,15 @@
     "msg.db_repo_exists": "資料庫倉庫已存在",
     "msg.db_repo_exists_prompt": "是否使用已存在的資料庫倉庫? (y/N): ",
     "msg.db_repo_exists_overwrite": "已使用已存在的資料庫倉庫",
-    "msg.db_repo_exists_skip": "跳過已存在的資料庫倉庫"
+    "msg.db_repo_exists_skip": "跳過已存在的資料庫倉庫",
+    "msg.db_pushed": "資料庫已推送",
+    "cmd.version": "顯示版本資訊",
+    "msg.version": "mgit 版本 %s",
+    "msg.version_aliases": "可用別名: v, -v, --version",
+    "msg.no_args_interactive": "無參數時進入互動式設定",
+    "prompt.select_remote_branch": "選擇遠端分支",
+    "prompt.local_branch_name": "輸入本地分支名稱",
+    "msg.branch_updated_success": "專案 %s 的分支已更新：本地分支 %s，遠端分支 %s",
+    "error.update_project_branches": "更新專案分支失敗：%v",
+    "prompt.select_push_branch": "請選擇推送目標分支"
 } 

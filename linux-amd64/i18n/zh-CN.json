@@ -9,6 +9,7 @@
     "cmd.set": "设置配置项 (mgit set)",
     "cmd.help": "显示帮助信息",
     "cmd.update": "更新 mgit 到最新版本",
+    "cmd.version": "显示版本信息",
     "prompt.project_name": "请输入项目名称: ",
     "prompt.repo_url": "请输入仓库地址 (例如: https://github.com/user/repo.git): ",
     "prompt.commit_message": "请输入提交说明（留空则使用机器名）: ",
@@ -175,7 +176,7 @@
     "error.branch_delete_failed": "删除分支失败",
     "error.branch_create_failed": "创建分支失败",
     "error.branch_merge_failed": "合并分支失败",
-    "cmd.branch": "分支管理",
+    "cmd.branch": "设置项目分支",
     "cmd.branch_list": "列出所有分支",
     "cmd.branch_create": "创建新分支",
     "cmd.branch_delete": "删除分支",
@@ -234,5 +235,14 @@
     "msg.db_repo_exists_skip": "跳过已存在的数据库仓库",
     "msg.input_new_repo": "请输入新的仓库地址",
     "msg.env_not_exit": "环境配置文件不存在，将创建新的配置文件",
-    "msg.repo_select_failed": "选择仓库地址失败: %v"
+    "msg.repo_select_failed": "选择仓库地址失败: %v",
+    "msg.db_pushed": "数据库已推送",
+    "msg.version": "mgit 版本 %s",
+    "msg.version_aliases": "可用别名: v, -v, --version",
+    "msg.no_args_interactive": "无参数时进入交互式设置",
+    "prompt.select_remote_branch": "选择远程分支",
+    "prompt.local_branch_name": "输入本地分支名称",
+    "msg.branch_updated_success": "项目 %s 的分支已更新：本地分支 %s，远程分支 %s",
+    "error.update_project_branches": "更新项目分支失败：%v",
+    "prompt.select_push_branch": "请选择推送目标分支"
 } 
