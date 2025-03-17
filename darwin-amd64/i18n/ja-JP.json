@@ -244,5 +244,6 @@
     "prompt.local_branch_name": "ローカルブランチ名を入力",
     "msg.branch_updated_success": "プロジェクト %s のブランチが更新されました：ローカルブランチ %s、リモートブランチ %s",
     "error.update_project_branches": "プロジェクトのブランチ更新に失敗しました：%v",
-    "prompt.select_push_branch": "プッシュ先のブランチを選択してください"
+    "prompt.select_push_branch": "プッシュ先のブランチを選択してください",
+    "error.reload_push": "プッシュに失敗しました。再度プッシュしてください"
 } 

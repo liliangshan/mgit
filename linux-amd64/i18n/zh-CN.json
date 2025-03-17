@@ -244,5 +244,6 @@
     "prompt.local_branch_name": "输入本地分支名称",
     "msg.branch_updated_success": "项目 %s 的分支已更新：本地分支 %s，远程分支 %s",
     "error.update_project_branches": "更新项目分支失败：%v",
-    "prompt.select_push_branch": "请选择推送目标分支"
+    "prompt.select_push_branch": "请选择推送目标分支",
+    "error.reload_push": "推送失败，请重试push"
 } 

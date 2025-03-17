@@ -244,5 +244,6 @@
     "prompt.local_branch_name": "Entrer le nom de la branche locale",
     "msg.branch_updated_success": "Branches du projet %s mises à jour : branche locale %s, branche distante %s",
     "error.update_project_branches": "Échec de la mise à jour des branches du projet : %v",
-    "prompt.select_push_branch": "Veuillez sélectionner la branche de destination pour le push"
+    "prompt.select_push_branch": "Veuillez sélectionner la branche de destination pour le push",
+    "error.reload_push": "Échec du push, veuillez réessayer"
 } 

@@ -244,5 +244,6 @@
     "prompt.local_branch_name": "Enter local branch name",
     "msg.branch_updated_success": "Project %s branches updated: local branch %s, remote branch %s",
     "error.update_project_branches": "Failed to update project branches: %v",
-    "prompt.select_push_branch": "Please select the push target branch"
+    "prompt.select_push_branch": "Please select the push target branch",
+    "error.reload_push": "Push failed, please retry push"
 } 
