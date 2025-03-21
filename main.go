@@ -118,6 +118,12 @@ func main() {
 	// 先检查是否是帮助命令
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
+		case "set":
+			// 语言选择和初始设置
+			if err := handleSettings(); err != nil {
+				log.Fatal(err)
+			}
+			os.Exit(0)
 		case "h", "-h", "-help", "help":
 			isTemp := false
 			// 检查 .env 文件是否存在，如果不存在则让用户选择语言
@@ -231,19 +237,14 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 			log.Fatal(i18n.T("msg.env_load_failed"))
 		}
 	}
+	log.Println("appExePath is: ", filepath.Join(appExePath, envFile))
 	//如果是远程仓库，获取远程数据库目录
 	dbDir := getRemoteDbDirName()
 	dbFilePath = filepath.Join(dbDir, getDbFileName())
-	if dbDir != "" {
-		databaseData, err = db.CreateDB(dbFilePath)
-		if err != nil {
-			log.Fatal(i18n.T("msg.db_create_failed"), err)
-
-		}
-	}
 	if databaseData == nil {
 		//如果数据库不存在，则创建数据库
 		if _, err := os.Stat(dbFilePath); os.IsNotExist(err) {
+
 			databaseData, err = db.CreateDB(dbFilePath)
 			if err != nil {
 				log.Fatal(i18n.T("msg.db_create_failed"), err)
@@ -1805,7 +1806,7 @@ func handleLanguageSelection(lang string, isFirst bool) error {
 	prompt := promptui.Select{
 		Label: i18n.T("prompt.select_language"),
 		Items: languages,
-
+		Size:  20,
 		Templates: &promptui.SelectTemplates{
 			Label:    "{{ . }}",
 			Active:   "> {{ .Name | cyan }}",
@@ -1914,7 +1915,7 @@ func initDbRepo(repoUrl string) error {
 		return fmt.Errorf(i18n.T("msg.dir_get_failed"))
 	}
 	// 使用 getRemoteDbDirName() 获取正确的远程数据库目录名
-	dbDir = filepath.Join(dbDir, getRemoteDbDirName())
+	dbDir = getRemoteDbDirName()
 	// 使用 appExePath 替换 selfPath
 	if appExePath == "" {
 		fmt.Println("selfPath: ")
