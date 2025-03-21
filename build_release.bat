@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: 设置版本号和应用名称
-set VERSION=1.0.19
+set VERSION=1.0.20
 set APP_NAME=mgit
 set BUILD_DIR=build
 set RELEASE_DIR=releases
