@@ -32,9 +32,9 @@ var databaseData *sql.DB
 // 添加新的辅助函数来获取环境变量文件名
 func getEnvFileName() string {
 
-	fmt.Printf("|===============================================|\n")
-	fmt.Printf("|  github: https://github.com/liliangshan/mgit  |\n")
-	fmt.Printf("|===============================================|\n")
+	fmt.Printf("===============================================\n")
+	fmt.Printf("  github: https://github.com/liliangshan/mgit  \n")
+	fmt.Printf("===============================================\n")
 	ex, err := os.Executable()
 	if err != nil {
 		log.Fatal(err)
@@ -241,7 +241,7 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 			log.Fatal(i18n.T("msg.env_load_failed"))
 		}
 	}
-	log.Println("appExePath is: ", filepath.Join(appExePath, envFile))
+	log.Println("appExePath is: ", appExePath)
 	//如果是远程仓库，获取远程数据库目录
 	dbDir := getRemoteDbDirName()
 	dbFilePath = filepath.Join(dbDir, getDbFileName())
@@ -651,15 +651,15 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 			if len(projects) == 0 {
 				log.Fatal(i18n.T("error.no_projects"))
 			}
-
+			if message == "" {
+				message = fmt.Sprintf(i18n.T("msg.push_by"), machineID)
+			} else {
+				message = fmt.Sprintf(i18n.T("msg.push_with_message"), message, machineID)
+			}
 			for _, project := range projects {
 				fmt.Printf("=============================================\n")
 				fmt.Printf(i18n.T("msg.pushing_project"), project.Name)
-				if message == "" {
-					message = fmt.Sprintf(i18n.T("msg.push_by"), machineID)
-				} else {
-					message = fmt.Sprintf(i18n.T("msg.push_with_message"), message, machineID)
-				}
+
 				err := executeInProjectDir(&project, func() error {
 					return git.GitPush(project.LocalBranch, project.RemoteBranch, message)
 				})
@@ -680,7 +680,7 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 			if err := syncDatabase("push"); err != nil {
 				log.Fatal(err)
 			}
-			fmt.Printf("=============================================\n")
+
 			fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
 			return
 		}
