@@ -363,7 +363,15 @@ func SetProxy() error {
 
 	// 如果选择否
 	if !options[index].Value {
-		RemoveProxy() // 直接调用，不处理错误
+		// 检查是否已设置代理
+		httpProxy, err := exec.Command("git", "config", "--get", "http.proxy").Output()
+		if err == nil && len(strings.TrimSpace(string(httpProxy))) > 0 {
+			// 如果设置了代理，则删除
+			if err := RemoveProxy(); err != nil {
+				return fmt.Errorf(i18n.T("error.remove_proxy"), err)
+			}
+			fmt.Println(i18n.T("msg.proxy_removed"))
+		}
 		return nil
 	}
 

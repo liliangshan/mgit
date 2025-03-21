@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: 设置版本号和应用名称
-set VERSION=1.0.16
+set VERSION=1.0.17
 set APP_NAME=mgit
 set BUILD_DIR=build
 set RELEASE_DIR=releases
@@ -27,21 +27,8 @@ set ARCH[3]=arm64
 :: 创建必要的目录
 if not exist %BUILD_DIR% mkdir %BUILD_DIR%
 if not exist %RELEASE_DIR% mkdir %RELEASE_DIR%
-if not exist %RELEASE_DIR%\windows mkdir %RELEASE_DIR%\windows
-if not exist %RELEASE_DIR%\linux mkdir %RELEASE_DIR%\linux
-if not exist %RELEASE_DIR%\macos mkdir %RELEASE_DIR%\macos
 
 echo [32m开始构建 %APP_NAME% v%VERSION%[0m
-
-:: 清理旧的构建文件
-if exist %BUILD_DIR%\* del /Q /F %BUILD_DIR%\*
-if exist %RELEASE_DIR%\windows\* del /Q /F %RELEASE_DIR%\windows\*
-if exist %RELEASE_DIR%\linux\* del /Q /F %RELEASE_DIR%\linux\*
-if exist %RELEASE_DIR%\macos\* del /Q /F %RELEASE_DIR%\macos\*
-
-:: 源码打包
-echo [32m打包源代码...[0m
-git archive --format=zip --output=%RELEASE_DIR%\%APP_NAME%-%VERSION%-source.zip HEAD
 
 :: 备份i18n文件夹
 rmdir /s /q i18nbak 2>nul
@@ -106,17 +93,7 @@ rmdir /s /q i18nbak
 echo [32m构建完成！[0m
 echo [32m发布文件已保存在 %RELEASE_DIR% 目录下的各平台子目录中[0m
 
-:: 列出生成的文件
-echo [32m源代码包：[0m
-dir /B %RELEASE_DIR%\%APP_NAME%-%VERSION%-source.zip
 
-echo [32mWindows 平台发布包：[0m
-dir /B %RELEASE_DIR%\windows
-
-echo [32mLinux 平台发布包：[0m
-dir /B %RELEASE_DIR%\linux
-
-echo [32mmacOS 平台发布包：[0m
-dir /B %RELEASE_DIR%\macos
-
+del /q /s %BUILD_DIR%\*
+rd /s/q %BUILD_DIR%
 endlocal
