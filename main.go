@@ -647,7 +647,11 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 
 			for _, project := range projects {
 				fmt.Printf(i18n.T("msg.pushing_project"), project.Name)
-				message := fmt.Sprintf(i18n.T("msg.push_by"), machineID)
+				if message == "" {
+					message = fmt.Sprintf(i18n.T("msg.push_by"), machineID)
+				} else {
+					message = fmt.Sprintf(i18n.T("msg.push_with_message"), message, machineID)
+				}
 				err := executeInProjectDir(&project, func() error {
 					return git.GitPush(project.LocalBranch, project.RemoteBranch, message)
 				})

@@ -2,10 +2,12 @@
 setlocal enabledelayedexpansion
 
 :: 设置版本号和应用名称
-set VERSION=1.0.18
+set VERSION=1.0.19
 set APP_NAME=mgit
 set BUILD_DIR=build
 set RELEASE_DIR=releases
+
+del /q /s %RELEASE_DIR%\*
 
 :: 定义目标平台
 set PLATFORMS[0]=windows-amd64
