@@ -32,9 +32,9 @@ var databaseData *sql.DB
 // 添加新的辅助函数来获取环境变量文件名
 func getEnvFileName() string {
 
-	fmt.Printf("===============================================\n")
-	fmt.Printf("  github: https://github.com/liliangshan/mgit  \n")
-	fmt.Printf("===============================================\n")
+	fmt.Println("╔════════════════════════════════════════════════════════╗")
+	fmt.Println("║      GitHub: https://github.com/liliangshan/mgit       ║")
+	fmt.Println("╚════════════════════════════════════════════════════════╝")
 	ex, err := os.Executable()
 	if err != nil {
 		log.Fatal(err)
@@ -498,8 +498,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 			}
 
 			for _, project := range projects {
-				fmt.Printf("=============================================\n")
+				fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
 				fmt.Printf(i18n.T("msg.pulling_project"), project.Name)
+				fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 
 				// 检查项目目录是否存在，如果不存在则初始化
 				projectDir := filepath.Join(os.Getenv("APP_PATH"), project.Name)
@@ -520,7 +521,7 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 				}
 				fmt.Printf(i18n.T("msg.pull_success"), project.Name)
 			}
-			fmt.Printf("=============================================\n")
+
 			fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
 			return
 		}
@@ -529,6 +530,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 		if err != nil {
 			log.Fatal(i18n.T("error.project_not_found"))
 		}
+		fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
+		fmt.Printf(i18n.T("msg.pulling_project"), projectName)
+		fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 
 		// 检查项目目录是否存在，如果不存在则初始化
 		projectDir := filepath.Join(os.Getenv("APP_PATH"), project.Name)
@@ -657,8 +661,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 				message = fmt.Sprintf(i18n.T("msg.push_with_message"), message, machineID)
 			}
 			for _, project := range projects {
-				fmt.Printf("=============================================\n")
+				fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
 				fmt.Printf(i18n.T("msg.pushing_project"), project.Name)
+				fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 
 				err := executeInProjectDir(&project, func() error {
 					return git.GitPush(project.LocalBranch, project.RemoteBranch, message)
@@ -674,7 +679,6 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 
 				fmt.Printf(i18n.T("msg.push_success"), project.Name)
 			}
-			fmt.Printf("=============================================\n")
 
 			// 在成功推送后同步数据库
 			if err := syncDatabase("push"); err != nil {
@@ -689,6 +693,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 		if err != nil {
 			log.Fatal(i18n.T("error.project_not_found"))
 		}
+		fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
+		fmt.Printf(i18n.T("msg.pushing_project"), projectName)
+		fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 
 		if message == "" {
 			message = fmt.Sprintf(i18n.T("msg.push_by"), machineID)
@@ -1179,8 +1186,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 		}
 
 		for _, project := range projects {
-			fmt.Printf("=============================================\n")
+			fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
 			fmt.Printf(i18n.T("msg.pulling_project"), project.Name)
+			fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 
 			// 检查项目目录是否存在，如果不存在则初始化
 			projectDir := filepath.Join(os.Getenv("APP_PATH"), project.Name)
@@ -1201,8 +1209,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 			}
 			fmt.Printf(i18n.T("msg.pull_success"), project.Name)
 		}
-		fmt.Printf("=============================================\n")
+		fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
 		fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
+		fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 		return
 
 	case "push-all":
@@ -1238,8 +1247,9 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 		}
 
 		for _, project := range projects {
-			fmt.Printf("=============================================\n")
+			fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
 			fmt.Printf(i18n.T("msg.pushing_project"), project.Name)
+			fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 			if message == "" {
 				message = fmt.Sprintf(i18n.T("msg.push_by"), machineID)
 			} else {
@@ -1261,13 +1271,14 @@ MGIT_HOME=%s`, languages[index].Code, appExePath)
 
 			fmt.Printf(i18n.T("msg.push_success"), project.Name)
 		}
-		fmt.Printf("=============================================\n")
+
 		// 在成功推送后同步数据库
 		if err := syncDatabase("push"); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("=============================================\n")
+		fmt.Printf("\033[36m╭─────────────────────────────────────╮\033[0m\n")
 		fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
+		fmt.Printf("\033[36m╰─────────────────────────────────────╯\033[0m\n")
 		return
 
 	default:
